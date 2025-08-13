@@ -375,6 +375,33 @@ const InitializedContainer: React.FC<{
   return (
     <Container>
       <Content $isBlurred={isExpanded}>
+        {/* Display final summary */}
+        {finalSummary && (
+          <MainContentSection>
+            <CollapsibleSectionHeader
+              onClick={toggleDashboardDeepResearchCollapse}
+              $isClickable={true}
+            >
+              <SectionHeaderContent>
+                <SectionHeaderTitle>
+                  Dashboard {deepResearch ? "Deep Research" : "Summary"}
+                </SectionHeaderTitle>
+                <CollapseIcon $isCollapsed={isDashboardDeepResearchCollapsed}>
+                  <KeyboardArrowDown />
+                </CollapseIcon>
+              </SectionHeaderContent>
+            </CollapsibleSectionHeader>
+
+            <CollapsibleSectionContent
+              $isCollapsed={isDashboardDeepResearchCollapsed}
+            >
+              <ContentContainer>
+                <MarkdownComponent data={[finalSummary]} />
+              </ContentContainer>
+            </CollapsibleSectionContent>
+          </MainContentSection>
+        )}
+
         {querySummaries.length > 0 && (
           <MainContentSection>
             <CollapsibleSectionHeader
@@ -414,33 +441,6 @@ const InitializedContainer: React.FC<{
                     </NestedItemContent>
                   </DynamicOpacityItem>
                 ))}
-              </ContentContainer>
-            </CollapsibleSectionContent>
-          </MainContentSection>
-        )}
-
-        {/* Display final summary */}
-        {finalSummary && (
-          <MainContentSection>
-            <CollapsibleSectionHeader
-              onClick={toggleDashboardDeepResearchCollapse}
-              $isClickable={true}
-            >
-              <SectionHeaderContent>
-                <SectionHeaderTitle>
-                  Dashboard {deepResearch ? "Deep Research" : "Summary"}
-                </SectionHeaderTitle>
-                <CollapseIcon $isCollapsed={isDashboardDeepResearchCollapsed}>
-                  <KeyboardArrowDown />
-                </CollapseIcon>
-              </SectionHeaderContent>
-            </CollapsibleSectionHeader>
-
-            <CollapsibleSectionContent
-              $isCollapsed={isDashboardDeepResearchCollapsed}
-            >
-              <ContentContainer>
-                <MarkdownComponent data={[finalSummary]} />
               </ContentContainer>
             </CollapsibleSectionContent>
           </MainContentSection>

@@ -344,8 +344,6 @@ export const DashboardSummarization: React.FC = () => {
       // Process rendered data after all queries are complete
       await onAllQueriesComplete(queryResults, dashboardMetadata, (result) => {
         console.log("Rendered data processing complete:", result);
-        // You can add additional logic here to handle the processed rendered data
-        // For example, updating state, displaying insights, etc.
       });
 
       setHasInitialized(true);
@@ -395,13 +393,11 @@ export const DashboardSummarization: React.FC = () => {
       setIsExpanded(false);
 
       // Process rendered data after regeneration
-      await onAllQueriesComplete(queryResults, dashboardMetadata, (result) => {
-        console.log(
-          "Rendered data processing complete after regeneration:",
-          result
-        );
-        // You can add additional logic here to handle the processed rendered data
-      });
+      await onAllQueriesComplete(
+        queryResults,
+        dashboardMetadata,
+        (_result) => {}
+      );
     } catch (error) {
       console.error("Error generating summaries:", error);
     } finally {

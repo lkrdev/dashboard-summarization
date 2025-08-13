@@ -80,9 +80,6 @@ export const onAllQueriesComplete = async (
 ): Promise<RenderedDataResult> => {
   const result = processRenderedData(queryResults, dashboardMetadata);
 
-  // Log the completion
-  console.log("All queries completed, processed rendered data:", result);
-
   // Call optional callback if provided
   if (callback) {
     callback(result);
