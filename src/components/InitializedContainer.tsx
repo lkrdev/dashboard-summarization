@@ -555,7 +555,7 @@ const InitializedContainer: React.FC<{
                 <img
                   height={20}
                   width={20}
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1024px-Google_Chat_icon_%282020%29.svg.png"
+                  src="https://cdn.worldvectorlogo.com/logos/google-chat-1.svg"
                   alt="Google Chat"
                 />
               </Button>
@@ -566,7 +566,7 @@ const InitializedContainer: React.FC<{
                 <img
                   height={20}
                   width={20}
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1024px-Google_Chat_icon_%282020%29.svg.png"
+                  src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg"
                   alt="Slack"
                 />
               </Button>
